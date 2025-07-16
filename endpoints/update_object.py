@@ -10,4 +10,4 @@ class UpdateObject(Endpoint):
 
 
     def check_response_name(self,name):
-         assert self.response_json ['name'] == ['name']
+         assert self.response_json ['name'] == name

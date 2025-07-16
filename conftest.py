@@ -20,7 +20,7 @@ def obj_id():
    # ).json()
     yield create_object.response_json['id']
     delete_object = DeleteObject()
-    delete_object.delete_by(create_object.response_json['id'])
+    delete_object.delete_by_id(create_object.response_json['id'])
     #requests.delete(f'https://api.restful-api.dev/objects/{response["id"]}')
 
 

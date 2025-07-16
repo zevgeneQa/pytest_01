@@ -65,7 +65,7 @@ def test_update_object(obj_id):
 
 
 def test_delete_object(obj_id):
-    delete_obj_endpoint = DeleteObject
+    delete_obj_endpoint = DeleteObject()
     delete_obj_endpoint.delete_by_id(obj_id)
     delete_obj_endpoint.check_response_is_200()
     #get_obj_endpoint.get_by_id(obj_id)

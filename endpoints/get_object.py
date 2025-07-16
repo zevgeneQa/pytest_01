@@ -5,7 +5,7 @@ class GetObject(Endpoint):
 
 
     def get_by_id(self, id):
-        self.response = requests.get(f'https://api.restful-api.dev/objects/{object_id}')
+        self.response = requests.get(f'https://api.restful-api.dev/objects/{id}')
         self.response_json = self.response_json()# метод получения объекта по id
 
 
