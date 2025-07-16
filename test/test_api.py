@@ -22,7 +22,7 @@ def test_create_object():
    }
     new_object_endpoint.new_object(payload=payload)
     new_object_endpoint.check_response_is_200()
-    new_object_endpoint.check_name(payload['name'])
+    new_object_endpoint.check_name(payload)
     #response = requests.post(
      #   url='https://api.restful-api.dev/objects' ,json=payload
    # ).json() #описанно в классе
@@ -64,12 +64,13 @@ def test_update_object(obj_id):
     #print(response)
 
 
-def test_delete_object(obj_id):
+def test_delete_object(obj_id, get_obj_endpoint=None):
+    get_obj_endpoint = GetObject()
     delete_obj_endpoint = DeleteObject()
     delete_obj_endpoint.delete_by_id(obj_id)
     delete_obj_endpoint.check_response_is_200()
-    #get_obj_endpoint.get_by_id(obj_id)
-    #get_obj_endpoint.check_response_is_404()
+    get_obj_endpoint.get_by_id(obj_id)
+    get_obj_endpoint.check_response_is_404()
     #response = requests.delete(f'https://api.restful-api.dev/objects/{obj_id}')
     #assert response.status_code == 200
     #response = requests.get(f'https://api.restful-api.dev/objects/{obj_id}')
